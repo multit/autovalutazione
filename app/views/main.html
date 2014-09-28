@@ -1,6 +1,12 @@
-<div class="container">
+<div ng-app="autovalutazioneApp" class="container" ng-controller="tasksController">
   <h2>Questioni:</h2>
-  <div ng-repeat="questione in questioni">
+  <div ng-repeat="questione in questioni" ng-init="addNewClicked=false;" >
+  
+    <div class="scheda">
     <p>Questione {{$index+1}}: {{ questione }}</p>
+    <a ng-click="update($index,'SI')">SI</a>&nbsp;
+    <a ng-click="update($index,'NO')">NO</a>&nbsp;
+    </div>
+    
   </div>
 </div>

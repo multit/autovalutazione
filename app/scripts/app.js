@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('autovalutazioneApp', [
+var app = angular.module('autovalutazioneApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -16,3 +16,18 @@ angular.module('autovalutazioneApp', [
         redirectTo: '/'
       });
   });
+
+app.controller('tasksController', function($scope,$log) {
+	$scope.$log = $log;
+
+	$scope.showNextQuestion = function (idx) {
+		$log.log('Mostra la prossima domanda' + idx);
+	};
+	$scope.updateQuestionsResults = function (idx,risposta) {
+		$log.log('aggiorna il database'+ risposta + ' ' + idx);
+	};
+	$scope.update = function (idx,risposta) {
+		$scope.showNextQuestion(idx);
+		$scope.updateQuestionsResults(idx,risposta);
+	};
+});
