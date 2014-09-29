@@ -20,7 +20,7 @@ angular.module('autovalutazioneApp').
 
 		$scope.scrollaTo = function(elem) {
 			var currQuestion = angular.element(document.getElementById(elem));
-			$log.log(elem);
+			//$log.log(elem);
 			$document.scrollToElementAnimated(currQuestion);
 		};
 
@@ -29,16 +29,17 @@ angular.module('autovalutazioneApp').
 		};
 
 		$scope.showNextQuestion = function (idx) {
-			$log.log('test');
+			//$log.log('test');
 			$scope.schedaNo = idx + 1;  // mostra la scheda successiva
 			var nextQuestion = 'scheda' + idx;
 			$scope.scrollaTo(nextQuestion);
 		};
 
 		$scope.updateQuestionsResults = function (idx,risposta) {
-			$log.log('aggiorna il database'+ risposta + ' ' + idx);
+			console.log('Questione: '+ idx + '\nRisposta selezionata: ' + risposta);
 		};
-		$scope.update = function (idx,risposta) {
+		$scope.update = function (evt,idx,risposta) {
+			$log.log('event:' + evt.clientX);
 			$scope.showNextQuestion(idx);
 			$scope.updateQuestionsResults(idx,risposta);
 		};

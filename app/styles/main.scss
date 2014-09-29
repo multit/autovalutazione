@@ -192,6 +192,11 @@ div.rispostaBtn {
     cursor: pointer;
     cursor: hand;
 }
+div.rispostaBtn:hover {
+    background-color: #0580B8;
+    color: #FFF;
+}
+
 .rispostaBtn:first-child  {
     margin-left:170px;
 }
@@ -208,3 +213,22 @@ div.rispostaBtnText {
     color: #0E527E;
 }
 
+a.rispostaBtn {
+    display: block;
+    height: 50px;
+    width: 50px;
+    border:1px solid #0580B8;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    padding-top: 12px;
+    float: left;
+    cursor: pointer;
+}
+a.rispostaBtn:last-child {
+    margin-left: 50px;
+}
+a.rispostaBtn:hover, .active {
+    background-color: #0580B8;
+    color: #FFF;
+    text-decoration: none;
+}

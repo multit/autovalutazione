@@ -16,9 +16,9 @@
     Questione {{$index+1}} di {{questioni.length}}<br /> {{ questione }}
 
 
-    <div class="risposte">
-      <div class="rispostaBtn" ng-click="update($index,'SI')" ><div class="rispostaBtnText">SI</div></div>
-      <div class="rispostaBtn"ng-click="update($index,'NO')"><div class="rispostaBtnText">NO</div></div>
+    <div class="risposte">       
+      <a class="rispostaBtn" id="sibtn" ng-click="update($event,$index,'SI')" >SI</a>
+      <a class="rispostaBtn" id="nobtn" ng-click="update($event,$index,'NO')">NO</a>
     </div>
 
 
