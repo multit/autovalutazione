@@ -99,3 +99,10 @@ body {
 	padding:20px;
 	margin:20px;
 }
+.ng-enter, .ng-leave, .ng-hide, .ng-show {
+    opacity: 0;
+    height: 0px;
+}
+.ng-enter-active, .ng-leave-active {
+    opacity: 1;
+}
