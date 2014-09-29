@@ -1,12 +1,28 @@
-<div ng-app="autovalutazioneApp" class="container" ng-init="schedaNo=0" >
-  <h2>Questioni:</h2>
-  <div ng-animate="'animate'" ng-repeat="questione in questioni" >
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700  ' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+<div ng-app="autovalutazioneApp" class="avcontainer" ng-init="schedaNo=0">
+
+
+<div class="titolo">
+  <h1>LES - Lupus Eritematoso Sistemico</h1>
+  <h2>Test di autovalutazione</h2>
+</div>
+
+  <div ng-repeat="questione in questioni" >
   
-    <div id="scheda{{$index}}" class="scheda" ng-if="$index<=schedaNo" >
+    <div id="scheda{{$index}}" class="sdpage" ng-if="$index<=schedaNo" >
     <a id="question{{$index}}"></a>
-    <p>Questione {{$index+1}}: {{ questione }}</p>
-    <a ng-click="update($index,'SI')">SI</a>&nbsp;
-    <a ng-click="update($index,'NO')">NO</a>&nbsp;
+    Questione {{$index+1}} di {{questioni.length}}<br /> {{ questione }}
+
+
+    <div class="risposte">
+      <div class="rispostaBtn" ng-click="update($index,'SI')" ><div class="rispostaBtnText">SI</div></div>
+      <div class="rispostaBtn"ng-click="update($index,'NO')"><div class="rispostaBtnText">NO</div></div>
+    </div>
+
+
+
     </div><!-- end scheda -->  
   </div>  
 

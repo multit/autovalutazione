@@ -3,14 +3,19 @@
 angular.module('autovalutazioneApp').
 	controller('MainCtrl', [ '$scope', '$log','$document',
 	function ($scope,$log,$document) {
-    $scope.questioni = [
+    
+		$scope.questioni = [
 			'La tua età',
-			'Da quando',
-			'Come ti sei accorta',
-			'Come ti sei accorta2',
-			'Come ti sei accorta 3 questione',
-			'Come ti sei accorta 4 questione'
-    ];
+			'Hai sofferto  di malessere o importanti lesioni cutanee dopo esserti esposta al sole o aver fatto una lampada solare?',
+			'Perdi molti capelli o li perdi a ciocche?',
+			'3. Ti senti spesso esageratamente stanca? ',
+			'Hai periodi di febbre o febbricola inspiegata?',
+			'Hai notato la comparsa di “ghiandole” (linfonodi) ingrossate al collo, alle ascelle o all’inguine?',
+			'Hai sofferto o soffri di afte/ulcere in bocca o dentro al naso?',
+			'Hai mai notato gonfiore o avvertito dolore a livello di qualche articolazione in assenza di cause evidenti (ad esempio trauma)',
+			'Hai notato che le punte delle dita ( mani e/o piedi) diventano bianche e/o livide (cianotiche) come se non “arrivasse sangue” quando ti esponi al freddo o in occasione di grosse emozioni?'
+		];
+
 		$scope.$log = $log;
 
 		$scope.scrollaTo = function(elem) {
@@ -21,7 +26,7 @@ angular.module('autovalutazioneApp').
 
 		$scope.toTheTop = function() {
 			$document.scrollTopAnimated(0);
-		};		
+		};
 
 		$scope.showNextQuestion = function (idx) {
 			$log.log('test');

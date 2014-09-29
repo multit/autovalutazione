@@ -106,3 +106,105 @@ body {
 .ng-enter-active, .ng-leave-active {
     opacity: 1;
 }
+
+body {
+    background-color:#0580B8 ;
+}
+
+.avcontainer {
+    /*width: 560px;*/
+    background-color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    color: #0580B8;
+    text-decoration: none;
+    word-spacing: normal;
+    text-align: left;
+    letter-spacing: 0;
+    /* togliere in produzione */
+    padding:50px;
+}
+
+.sdpage {
+    padding:20px;
+    display:block;  
+    height: 380px;
+    border:0px solid #CCC;
+    font-size: 1.2em;
+    line-height: 1.3em;
+    background-color: #FFF;
+    background-image: url("../images/autov_backgr.png");
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+    position:relative;
+}
+
+.sdpage h1, .titolo h1{
+    font-size: 2.1em;
+    font-weight: normal;    
+    margin-bottom:-0.7em;
+}
+
+.sdpage h2, .titolo h2 {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #0E527E;
+}
+
+div.begin {
+    height: 140px;
+    width: 140px;
+    -moz-border-radius: 70px;
+    border-radius: 70px;
+    background-color:#0580B8 ;
+    position:relative;
+    margin-left: 180px;
+    margin-top: 30px;
+    }
+div.begin-text   {
+    position:absolute;
+    top: 58px;
+    left:0px;
+    width:140px;
+    text-align:center;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.1em ;
+    color: #fff;
+}
+div.risposte {
+    width: 560px;
+    border:0px solid #CCC;
+    text-align:center;
+    position:absolute;
+    top:180px;
+}
+div.rispostaBtn {
+    height: 50px;
+    width: 50px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border:1px solid #0580B8; 
+    position:relative;
+    float:left;
+    margin-right:60px;
+    cursor: pointer;
+    cursor: hand;
+}
+.rispostaBtn:first-child  {
+    margin-left:170px;
+}
+
+div.rispostaBtnText {
+    position:absolute;
+    text-align: center;
+    top: 12px;
+    left:0px;
+    width:48px;
+    text-align:center;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.1em ;
+    color: #0E527E;
+}
+
