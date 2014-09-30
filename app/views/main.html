@@ -10,36 +10,46 @@
   <h2>Test di autovalutazione</h2>
   Spesso le malattie reumatiche sono insidiose e i loro sintomi possono essere ben mascherati. Attraverso una corretta informazione e con l’uso di alcuni semplici supporti possiamo effettuare una autovalutazione che può rassicurarci sul nostro stato di salute.
   <div class="risposte"> 
-  <div class="begin" ng-click="schedaNo=0"><a href="" class="" >inizia il test</a></div>
+  <div class="begin" ng-click="inizia()"><a href="" class="" >inizia il test</a></div>
   </div>
 
 </div>
 
-
-  <div ng-repeat="questione in questioni" >
+  <div ng-repeat="questione in questioni" id="questionContainer">
   
-    <div id="scheda{{$index}}" class="sdpage" ng-if="$index<=schedaNo" >
+    <div id="scheda{{$index}}" class="sdpage" ng-if="$index<=schedaNo" ng-init="currQuest=$index">
     <a id="question{{$index}}"></a>
-    <span class="questionNo">Questione {{$index+1}} di {{questioni.length}}</span>
-    <br /> {{ questione }}
+    <span class="questionNo">domanda&nbsp;{{$index+1}} di {{questioni.length}}</span>
+    <br /> {{ questione.domanda }}
 
     <div class="risposte">       
       
-    <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-primary" ng-click="update($event,$index,'SI')">
-      <input type="radio" name="options" id="option1" > SI</label>
-    <label class="btn btn-primary" ng-click="update($event,$index,'NO')">
-       <input type="radio" name="options" id="option2" >NO</label>
+    <div class="btn-group" data-toggle="buttons" >
+    <label class="btn btn-primary" ng-click="update(currQuest,risposta)" ng-repeat="risposta in questione.risposte">
+      <input type="radio" name="options" id="option1" >{{risposta}}</label>    
     </div>  
-    </div>
+
+    </div><!-- end risposte -->
 
 
     </div><!-- end scheda -->
 
   </div>  
 
-  <footer>
-    <button ng-click="toTheTop()">Take me back!</button>
-    <button ng-click="scrollaTo('scheda0')">Take me to questione0</button>
-  </footer>
+<div class="sdpage risultati" ng-init="!risultatiTest" ng-if="risultatiTest">
+
+  <div class="risultatiHead">
+<h2>Risultati del test:<br /> 
+  Hai risposto SI ad # domande del test<br /></h2>
+  Ti consigliamo di rivolgerti al tuo medico di Medicina Generale per valutare il tuo stato di salute.
+  </div>
+   
+  
+<br /><br />
+  <h2>Cos'è il Lupus Eritematoso Sistemico</h2>
+  Il lupus eritematoso sistemico è una malattia reumatica infiammatoria cronica, relativamente rara, classificata fra le connettiviti sistemiche. Essa è ’ più frequente nelle giovani donne. La sua causa è sconosciuta, ma è ben documentato il ruolo di fattori predisponenti di tipo genetico, ormonale (ormoni sessuali femminili) ed ambientale (infezioni virali, alcuni farmaci o sostanze tossiche, raggi ultravioletti). La coesistenza dei fattori di cui sopra induce alcune alterazioni del sistema immunitario che reagisce contro l’organismo stesso (malattia “autoimmune”) causando le molteplici manifestazioni della malattia Sono oggi disponibili diverse terapie  capaci di correggere le anomalie immunologiche e curare la malattia.
+  <br /><br /><a href="" ng-click="toTheTop()" class="smallRo">Torna all'inizio</a>
+
+</div>
+
 </div>
