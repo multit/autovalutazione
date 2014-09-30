@@ -3,7 +3,7 @@
 
 
 
-<div ng-app="autovalutazioneApp" class="avcontainer" ng-init="schedaNo=-1">
+<div ng-app="autovalutazioneApp" class="avcontainer" ng-init="currDomanda=-1">
 
 <div class="sdpage inizio"> 
   <h1>LES - Lupus Eritematoso Sistemico</h1>
@@ -15,9 +15,13 @@
 
 </div>
 
-  <div ng-repeat="questione in questioni" id="questionContainer">
-  
-    <div id="scheda{{$index}}" class="sdpage" ng-if="$index<=schedaNo" ng-init="currQuest=$index">
+
+
+
+<div ng-repeat="questione in questioni" id="questionContainer">
+
+  <div id="scheda{{$index}}" class="sdpage" ng-show="$index<=currDomanda" ng-init="currQuest=$index">
+
     <a id="question{{$index}}"></a>
     <span class="questionNo">domanda&nbsp;{{$index+1}} di {{questioni.length}}</span>
     <br /> {{ questione.domanda }}
@@ -25,18 +29,22 @@
     <div class="risposte">       
       
     <div class="btn-group" data-toggle="buttons" >
-    <label class="btn btn-primary" ng-click="update(currQuest,risposta)" ng-repeat="risposta in questione.risposte">
-      <input type="radio" name="options" id="option1" >{{risposta}}</label>    
+      <label class="btn btn-primary" ng-click="update(currQuest,risposta)" ng-repeat="risposta in questione.risposte">
+      <input type="radio" name="options" id="option{{$index}}" >{{risposta}}</label>    
     </div>  
 
     </div><!-- end risposte -->
 
 
-    </div><!-- end scheda -->
+  </div><!-- end scheda -->
 
-  </div>  
+</div>  
 
-<div class="sdpage risultati" ng-init="!risultatiTest" ng-if="risultatiTest">
+
+
+
+
+<div id="schedaRisultati" class="sdpage risultati" ng-init="!risultatiTest" ng-show="risultatiTest">
 
   <div class="risultatiHead">
 <h2>Risultati del test:<br /> 

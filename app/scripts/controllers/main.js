@@ -16,46 +16,52 @@ angular.module('autovalutazioneApp').
 			{domanda:'Hai notato che le punte delle dita ( mani e/o piedi) diventano bianche e/o livide (cianotiche) come se non “arrivasse sangue” quando ti esponi al freddo o in occasione di grosse emozioni?',risposte:['SI','NO']}
 		];
 
-		$scope.currDomanda;
-
+		$scope.totDomande = Object.keys($scope.questioni).length;
+		
 
 		$scope.inizia = function() {
-			$scope.schedaNo=0;
-			$scope.scrollaTo('questionContainer');
+			$scope.currDomanda = 0;
+			$scope.testCompletato=false;
+			$scope.scrollaTo('scheda0');
 		}
 
-		$scope.showNextQuestion = function (idx) {
-			$scope.schedaNo = idx + 1;  // mostra la scheda successiva
-			var nextQuestion = 'scheda' + idx;
-			$scope.scrollaTo(nextQuestion);
-		};
-
 		$scope.updateQuestionsResults = function (idx,risposta) {
-			if (idx < (Object.keys($scope.questioni).length-1)) {  // Lunghezza delle key dell'oggetto parte da 1
-				console.log('Questione: '+ idx + '\nRisposta selezionata: ' + risposta);
-				} else {
-				$scope.mostraRisultati();	
-				console.log('Mostra i risultati' + Object.keys($scope.questioni).length);		
-			}			
+
+			if(!$scope.testCompletato) {
+				if (idx < ($scope.totDomande-1)) {  // Lunghezza delle key dell'oggetto parte da 1
+					$scope.currDomanda = idx + 1;
+					var nextQ = 'scheda' + ($scope.currDomanda);
+					$scope.scrollaTo(nextQ);
+				} else if (idx == ($scope.totDomande-1)) {
+					$scope.currDomanda = idx + 1;
+					$scope.mostraRisultati();
+					$scope.testCompletato= true;				
+				}
+			}
 		};
 
 		$scope.mostraRisultati = function () {
+			$scope.scrollaTo('schedaRisultati');
 			$scope.risultatiTest = true;
 		}
 
 		$scope.update = function (idx,risposta) {
-			$scope.showNextQuestion(idx);
+			
 			$scope.updateQuestionsResults(idx,risposta);
 		};
 
 		$scope.scrollaTo = function(elem) {
-			var currQuestion = angular.element(document.getElementById(elem));
-			$document.scrollToElementAnimated(currQuestion);
+			var elemento = angular.element(document.getElementById(elem));
+			$document.scrollToElementAnimated(elemento);
 		};
 
 		$scope.toTheTop = function() {
 			$document.scrollTopAnimated(0);
 		};
-
+		$scope.resetta = function() {
+			$scope.toTheTop();
+			$scope.$index = 0;
+			//$scope.currDomanda = 0
+		}
 
 	}]);
