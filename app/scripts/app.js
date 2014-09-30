@@ -16,5 +16,5 @@ angular.module('autovalutazioneApp', [
       .otherwise({
         redirectTo: '/'
       });
-  }).value('duScrollOffset', -30);
+  }).value('duScrollOffset', 0);
 

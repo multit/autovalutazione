@@ -1,29 +1,41 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700  ' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-<div ng-app="autovalutazioneApp" class="avcontainer" ng-init="schedaNo=0">
 
 
-<div class="titolo">
+<div ng-app="autovalutazioneApp" class="avcontainer" ng-init="schedaNo=-1">
+
+<div class="sdpage inizio"> 
   <h1>LES - Lupus Eritematoso Sistemico</h1>
   <h2>Test di autovalutazione</h2>
+  Spesso le malattie reumatiche sono insidiose e i loro sintomi possono essere ben mascherati. Attraverso una corretta informazione e con l’uso di alcuni semplici supporti possiamo effettuare una autovalutazione che può rassicurarci sul nostro stato di salute.
+  <div class="risposte"> 
+  <div class="begin" ng-click="schedaNo=0"><a href="" class="" >inizia il test</a></div>
+  </div>
+
 </div>
+
 
   <div ng-repeat="questione in questioni" >
   
     <div id="scheda{{$index}}" class="sdpage" ng-if="$index<=schedaNo" >
     <a id="question{{$index}}"></a>
-    Questione {{$index+1}} di {{questioni.length}}<br /> {{ questione }}
-
+    <span class="questionNo">Questione {{$index+1}} di {{questioni.length}}</span>
+    <br /> {{ questione }}
 
     <div class="risposte">       
-      <a class="rispostaBtn" id="sibtn" ng-click="update($event,$index,'SI')" >SI</a>
-      <a class="rispostaBtn" id="nobtn" ng-click="update($event,$index,'NO')">NO</a>
+      
+    <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary" ng-click="update($event,$index,'SI')">
+      <input type="radio" name="options" id="option1" > SI</label>
+    <label class="btn btn-primary" ng-click="update($event,$index,'NO')">
+       <input type="radio" name="options" id="option2" >NO</label>
+    </div>  
     </div>
 
 
+    </div><!-- end scheda -->
 
-    </div><!-- end scheda -->  
   </div>  
 
   <footer>

@@ -8,7 +8,7 @@ angular.module('autovalutazioneApp').
 			'La tua età',
 			'Hai sofferto  di malessere o importanti lesioni cutanee dopo esserti esposta al sole o aver fatto una lampada solare?',
 			'Perdi molti capelli o li perdi a ciocche?',
-			'3. Ti senti spesso esageratamente stanca? ',
+			'Ti senti spesso esageratamente stanca? ',
 			'Hai periodi di febbre o febbricola inspiegata?',
 			'Hai notato la comparsa di “ghiandole” (linfonodi) ingrossate al collo, alle ascelle o all’inguine?',
 			'Hai sofferto o soffri di afte/ulcere in bocca o dentro al naso?',
