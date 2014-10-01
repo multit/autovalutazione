@@ -32,6 +32,12 @@ CREATE TABLE IF NOT EXISTS `sondaggioLes` (
   `Q1` varchar(50) NOT NULL,
   `Q2` varchar(50) NOT NULL,
   `Q3` varchar(50) NOT NULL,
+  `Q4` varchar(50) NOT NULL,
+  `Q5` varchar(50) NOT NULL,
+  `Q6` varchar(50) NOT NULL,
+  `Q7` varchar(50) NOT NULL,
+  `Q8` varchar(50) NOT NULL,
+  `Q9` varchar(50) NOT NULL,  
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 

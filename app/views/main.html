@@ -41,23 +41,29 @@
 </div>  
 
 
+<div id="schedaRisultati" class="sdpage risultati" ng-init="!risultatiScheda" ng-show="risultatiScheda" > <!-- -->
 
+<div class="risultatiHead centrato" ng-click="mostraRisultati()" ng-init="!risultatiBtn" ng-show="risultatiBtn"> <!--  -->
+  <h2>Mostra risultati del test</h2>
+</div>
 
+<div class="risultatiHead" ng-show="risultatiVisibili" ng-init="!risultatiVisibili"  > <!-- -->
+<!--<h2 class="azzurro">Hai risposto SI a {{numeroRispostePositive}} domande del test<br /></h2> -->
 
-<div id="schedaRisultati" class="sdpage risultati" ng-init="!risultatiTest" ng-show="risultatiTest">
-
-  <div class="risultatiHead">
-<h2>Risultati del test:<br /> 
-  Hai risposto SI ad # domande del test<br /></h2>
-  Ti consigliamo di rivolgerti al tuo medico di Medicina Generale per valutare il tuo stato di salute.
-  </div>
-   
+<div ng-show="risultatoPositivo"  > <!---->
+  <h2 class="azzurro">Hai risposto SI ad almeno due domande del test</h2>
+  <h2>Ti consigliamo di rivolgerti al tuo medico di Medicina Generale per valutare il tuo stato di salute.</h2>
+</div>
+<div ng-show="risultatoNegativo">
+  <h2 class="azzurro">Hai risposto SI a {{numeroRispostePositive}} domande del test</h2>
+  <h2> Non presenti i più frequenti sintomi del LES.</h2>
+</div>
+    
   
-<br /><br />
-  <h2>Cos'è il Lupus Eritematoso Sistemico</h2>
-  Il lupus eritematoso sistemico è una malattia reumatica infiammatoria cronica, relativamente rara, classificata fra le connettiviti sistemiche. Essa è ’ più frequente nelle giovani donne. La sua causa è sconosciuta, ma è ben documentato il ruolo di fattori predisponenti di tipo genetico, ormonale (ormoni sessuali femminili) ed ambientale (infezioni virali, alcuni farmaci o sostanze tossiche, raggi ultravioletti). La coesistenza dei fattori di cui sopra induce alcune alterazioni del sistema immunitario che reagisce contro l’organismo stesso (malattia “autoimmune”) causando le molteplici manifestazioni della malattia Sono oggi disponibili diverse terapie  capaci di correggere le anomalie immunologiche e curare la malattia.
-  <br /><br /><a href="" ng-click="toTheTop()" class="smallRo">Torna all'inizio</a>
-
+  <div class="testo">
+<h2>Cos'è il Lupus Eritematoso Sistemico</h2>
+    Il lupus eritematoso sistemico è una malattia reumatica infiammatoria cronica, relativamente rara, classificata fra le connettiviti sistemiche. Essa è ’ più frequente nelle giovani donne. La sua causa è sconosciuta, ma è ben documentato il ruolo di fattori predisponenti di tipo genetico, ormonale (ormoni sessuali femminili) ed ambientale (infezioni virali, alcuni farmaci o sostanze tossiche, raggi ultravioletti). La coesistenza dei fattori di cui sopra induce alcune alterazioni del sistema immunitario che reagisce contro l’organismo stesso (malattia “autoimmune”) causando le molteplici manifestazioni della malattia Sono oggi disponibili diverse terapie  capaci di correggere le anomalie immunologiche e curare la malattia.</div>
+  <br /><br /><a href="" ng-click="inizia()" class="smallRo">Ripeti il test</a>
 </div>
 
 </div>
